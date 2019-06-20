@@ -1,0 +1,41 @@
+﻿@model List<AjaxProject.Models.CarMarka>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div class="row">
+
+    <form action="/" method="post" id="form-marka">
+        <div class="form-group">
+            <label for="marka-name">Marka</label>
+            <input type="text" id="marka-name" name="Name" value="" class="form-control" />
+        </div>
+
+
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+    <hr />
+
+    <ul id="model-list">
+       @foreach (var item in Model)
+       {
+           <li>@item.Name</li>
+       }
+    </ul>
+
+
+    <br />
+    <select class="form-control" name="CarMarkaID">
+        <option value="">Select Marka</option>
+        @foreach (var item in Model)
+        {
+            <option value="@item.Id">@item.Name</option>
+        }
+    </select>
+    <br />  
+    <select class="form-control" name="CarModelID">
+    </select>
+</div>
